@@ -17,4 +17,16 @@ const questions = [
   landmark6 = {
     choices: [`Marina Bay Sands`, `The Mira`, `Yas Hotel`, `W Barcelona`]
   }
+  landmark7 = {
+    choices: [`Tower Bridge`, `Twin Bridge`, `London Bridge`, `Charles Bridge`]
+  }
+  landmark8 = {
+    choices: [`Pantheon`, `Roman Forum`, `Duomo di Milano`, `Capri`]
+  }
+  landmark9 = {
+    choices: [`Brandenburg Gate`, `Arc de Triomphe`, `Merdian Gate`, `Golden Gate`]
+  }
+  landmark10 = {
+    choices: [`Hagia Sophia`, `Alhambra`, `Mosque of Cordoba`, `Saint Basil's Cathedral`]
+  }
 ]
