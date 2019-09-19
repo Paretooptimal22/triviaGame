@@ -1,4 +1,4 @@
-document.addEventListener(`load`, )
+
 
 const questions = () => {
   landmark1 = [`Basilica La Sagrada Familia`, `Santiago de Compostela Cathedral`, `Santa Iglesia Catedral Primada de Toledo`, `Catedral de Sevilla`]
