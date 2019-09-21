@@ -1,32 +1,50 @@
 // array of landmarks and answers
 const landArr = [
-  {landmark1: [`Basilica La Sagrada Familia`, `Santiago de Compostela Cathedral`, `Santa Iglesia Catedral Primada de Toledo`, `Catedral de Sevilla`]
+  {landmark: [`Basilica La Sagrada Familia`, `Santiago de Compostela Cathedral`, `Santa Iglesia Catedral Primada de Toledo`, `Catedral de Sevilla`]
   },
-  {landmark2: [`The Louvre`, `Arc de Triomphe`, `Guggenheim Museum`, `Grand Palais`]
+  {landmark: [`The Louvre`, `Arc de Triomphe`, `Guggenheim Museum`, `Grand Palais`]
   },
-  {landmark3: [`Eiffel Tower`, `Tokyo Tower`, `CN Tower`, `Space Needle`]
+  {landmark: [`Eiffel Tower`, `Tokyo Tower`, `CN Tower`, `Space Needle`]
   },
-  {landmark4: [`The Woolworth Building`, `Chrysler Building`, `Flatiron Building`, `Lloyd's Building`]
+  {landmark: [`The Woolworth Building`, `Chrysler Building`, `Flatiron Building`, `Lloyd's Building`]
   },
-  {landmark5: [`Sydney Opera House`, `Metropolitan Opera House`, `Melbourne Opera House`, `Christchurch Opera`]
+  {
+    landmark: [`Metropolitan Opera House`, `Melbourne Opera House`, `Christchurch Opera`, `Sydney Opera House` ]
   },
-  {landmark6: [`Marina Bay Sands`, `The Mira`, `Yas Hotel`, `W Barcelona`]
+  {
+    landmark: [`The Mira`, `Yas Hotel`, `Marina Bay Sands`, `W Barcelona`]
   },
-  {landmark7: [`Tower Bridge`, `Twin Bridge`, `London Bridge`, `Charles Bridge`]
+  {landmark: [`Tower Bridge`, `Twin Bridge`, `London Bridge`, `Charles Bridge`]
   },
-  {landmark8: [`Pantheon`, `Roman Forum`, `Duomo di Milano`, `Capri`]
+  {
+    landmark: [`Roman Forum`, `Pantheon`, `Duomo di Milano`, `Capri`]
   },
-  {landmark9: [`Brandenburg Gate`, `Arc de Triomphe`, `Merdian Gate`, `Golden Gate`]
+  {
+    landmark: [`Arc de Triomphe`, `Merdian Gate`, `Golden Gate`, `Brandenburg Gate`]
   },
-  {landmark10: [`Hagia Sophia`, `Alhambra`, `Mosque of Cordoba`, `Saint Basil's Cathedral`]
+  {landmark: [`Hagia Sophia`, `Alhambra`, `Mosque of Cordoba`, `Saint Basil's Cathedral`]
   }
 ]
+
+// correct
+const ans1 = `Basilica La Sagrada Familia` 
+const ans2 = `The Louvre` 
+const ans3 = `Tokyo Tower`
+const ans4 = `Flatiron Building`
+const ans5 = `Sydney Opera House`
+const ans6 = `Marina Bay Sands`
+const ans7 = `Tower Bridge`
+const ans8 = `Pantheon`
+const ans9 = `Brandenburg Gate`
+const ans10 = `Hagia Sophia`
 
 // styling of begin button
 document.getElementById(`beginBtn`).style.display = `block`
 
 // counter for template literals
 let count = 1
+
+let ansCount = 0
 
 // create card element to play game
 let cardElem = document.createElement(`div`)
@@ -38,10 +56,14 @@ cardElem.innerHTML = `
               <span class="card-title">Name this landmark</span>
             </div>
             <div class="card-content center-align">
-              <a class="waves-effect waves-light btn-small">${landArr[0].landmark1[0]}</a>
-              <a class="waves-effect waves-light btn-small">${landArr[0].landmark1[0]}</a>
-              <a class="waves-effect waves-light btn-small">${landArr[0].landmark1[0]}</a>
-              <a class="waves-effect waves-light btn-small">${landArr[0].landmark1[0]}</a>
+              <div class="row">
+                <a class="waves-effect waves-light btn-small col s6" href="#modal1">${landArr[0].landmark[0]}</a>
+                <a class="waves-effect waves-light btn-small col s6" href="#modal1">${landArr[0].landmark[1]}</a>
+              </div>
+              <div class="row">
+                <a class="waves-effect waves-light btn-small col s6" href="#modal1">${landArr[0].landmark[2]}</a>
+                <a class="waves-effect waves-light btn-small col s6" href="#modal1">${landArr[0].landmark[3]}</a>
+              </div>
             </div>
           </div>
         </div>
@@ -60,7 +82,16 @@ const beginGame = () => {
 
 beginGame()
 
+// display modal on click with answer
+const renderAnswer = () => {
+  document.addEventListener(`click`, event => {
+    if (event.target.className === `waves-effect waves-light btn-small col s6`) {
+      ansCount++
+      
 
+    }
+  })
+}
 
-
+renderAnswer()
 
