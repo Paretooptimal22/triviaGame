@@ -38,43 +38,19 @@ const answers = [`Basilica La Sagrada Familia`, `The Louvre`, `Tokyo Tower`, `Fl
 // styling of begin button
 document.getElementById(`beginBtn`).style.display = `block`
 
-let count = 0
-let imageCount = 1
-
 // create card element to play game
+let count = -1
+let imageCount = 0
+
 const renderCard = () => {
-  document.getElementById(`pic`).innerHTML = `<img id="image" src="./assets/images/image1.jpg" alt="landmark">`
+  count++
+  imageCount++
+  document.getElementById(`pic`).innerHTML = `<img id="image" src="./assets/images/image${imageCount}.jpg" alt="landmark">`
   document.getElementById(`choice1`).textContent = `${landArr[count].landmark[0]}`
   document.getElementById(`choice2`).textContent = `${landArr[count].landmark[1]}`
   document.getElementById(`choice3`).textContent = `${landArr[count].landmark[2]}`
   document.getElementById(`choice4`).textContent = `${landArr[count].landmark[3]}`
 }
-  // let cardElem = document.createElement(`div`)
-  // cardElem.innerHTML = `
-  //       <div class="col s12" id"cardDiv">
-  //         <div class="card">
-  //           <div class="card-image">
-  //             <img src="./assets/images/image${imageCount}.jpg" alt="landmark" id="images">
-  //             <span class="card-title">Name this landmark</span>
-  //           </div>
-  //           <div class="card-content center-align">
-  //             <div class="row">
-  //               <a class="waves-effect waves-light btn-small modal-trigger col s6" href="#modal1">${landArr[count].landmark[0]}</a>
-  //               <a class="waves-effect waves-light btn-small modal-trigger col s6" href="#modal1">${landArr[count].landmark[1]}</a>
-  //             </div>
-  //             <div class="row">
-  //               <a class="waves-effect waves-light btn-small modal-trigger col s6" href="#modal1">${landArr[count].landmark[2]}</a>
-  //               <a class="waves-effect waves-light btn-small modal-trigger col s6" href="#modal1">${landArr[count].landmark[3]}</a>
-  //             </div>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     `
-  // document.getElementById(`cardHolder`).append(cardElem)
-
-  
-// }
-
 
 // on click of button: display card element and hide button
 const beginGame = () => {
@@ -94,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var instances = M.Modal.init(elems);
 })
 
-// display modal on click with answer
+// display modal when player clicks choice and answer confirmed
 const renderAnswer = () => {
   let ansCount = -1
   document.addEventListener(`click`, event => {
@@ -112,4 +88,11 @@ const renderAnswer = () => {
 }
 
 renderAnswer()
+
+// render next question when modal is closed
+document.addEventListener(`click`, event => {
+  if (event.target.id === `modalBtn`) {
+    renderCard()
+  }
+})
 
