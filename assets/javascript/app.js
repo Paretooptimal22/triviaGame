@@ -116,20 +116,53 @@ document.addEventListener(`click`, event => {
   }
 })
 
+// const fiveSeconds = () => {
+//   document.getElementById(`timer`).textContent = `10 seconds remaining!`
+
+// const countDown = () => {
+//   document.addEventListener(`click`, event => {
+//     if (event.target.id === `beginBtn` || event.target.id === `modalBtn`) {
+      
+//       }
+//     }
+//   })
+// }
+
+// // set timeout
+// setTimeout(fiveSeconds, 5000)
+// setTimeout(tenSeconds, 10000)
+// setTimeout(timeUp, 15000)
+
+
 // timer
-let time = 20
+// let time = 20
+// let myTimer
 
-const compTime = () => {
-  let seconds = time % 60
-  seconds = `${seconds}`.length < 2 ? `0${seconds}` : `${seconds.toString()[0]}${seconds.toString()[1]}`
-  return `00:${seconds}`
-}
+// const compTime = () => {
+//   let seconds = time % 60
+//   seconds = `${seconds}`.length < 2 ? `0${seconds}` : `${seconds.toString()[0]}${seconds.toString()[1]}`
+//   return `00:${seconds}`
+// }
 
-const showTime = _ => {
-  document.getElementById(`timer`).textContent = compTime()
-}
-showTime()
+// const showTime = _ => {
+//   document.getElementById(`timer`).textContent = compTime()
+// }
+// showTime()
 
-const countDown = () => {
-  
-}
+// const countDown = () => {
+//   document.addEventListener(`click`, event => {
+//     if (event.target.id === `beginBtn` || event.target.id === `modalBtn`) {
+//       myTime = setInterval(() => {
+//         time--
+//         document.getElementById(`timer`).textContent = compTime()
+//       }, 1000)
+//     } 
+//     if (myTime === 20) {
+//       clearInterval(myTime)
+//       document.getElementById(`timer`).textContent = `Time is up!`
+//     }
+//   })
+// }
+// countDown()
+
+
