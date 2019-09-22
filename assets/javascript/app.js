@@ -82,12 +82,14 @@ const renderAnswer = () => {
         document.getElementById(`confirm`).innerHTML = `CORRECT!`
         document.getElementById(`ans`).innerHTML = `The Landmark is ${answers[0]}`
         answers.shift()
+        console.log(answers.length)
       } else {
         wrong++
         document.getElementById(`wrong`).textContent = `WRONG: ${wrong}`
         document.getElementById(`confirm`).innerHTML = `WRONG!`
         document.getElementById(`ans`).innerHTML = `The Landmark is ${answers[0]}`
         answers.shift()
+        console.log(answers.length)
       }
     }
     
@@ -102,4 +104,18 @@ document.addEventListener(`click`, event => {
     renderCard()
   }
 })
+
+
+document.addEventListener(`click`, event => {
+  if (event.target.className === `modal-close waves-effect waves-green btn light-blue` && answers.length === 0) {
+    document.getElementById(`choice1`).style.display = `none`
+    document.getElementById(`choice2`).style.display = `none`
+    document.getElementById(`choice3`).style.display = `none`
+    document.getElementById(`choice4`).style.display = `none`
+    let gameComplete = document.createElement(`div`)
+    gameComplete.innerHTML = `<h3>Thanks for playing.  Now go out and see the world!</div>`
+    document.getElementById(`message`).append(gameComplete)
+  }
+})
+
 
