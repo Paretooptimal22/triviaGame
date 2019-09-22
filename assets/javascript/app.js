@@ -116,4 +116,20 @@ document.addEventListener(`click`, event => {
   }
 })
 
+// timer
+let time = 20
 
+const compTime = () => {
+  let seconds = time % 60
+  seconds = `${seconds}`.length < 2 ? `0${seconds}` : `${seconds.toString()[0]}${seconds.toString()[1]}`
+  return `00:${seconds}`
+}
+
+const showTime = _ => {
+  document.getElementById(`timer`).textContent = compTime()
+}
+showTime()
+
+const countDown = () => {
+  
+}

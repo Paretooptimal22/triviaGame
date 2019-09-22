@@ -15,7 +15,7 @@
 <body>
   <!-- title -->
   <nav>
-    <div class="nav-wrapper">
+    <div class="nav-wrapper light-blue">
       <a href="#" class="brand-logo center">Name That Landmark!</a>
     </div>
   </nav>
@@ -24,8 +24,11 @@
   <!-- area to display questions -->
   <div class="container blue grey lighten-5">
     <div class="row center-align">
-      <a class="waves-effect waves-light btn-large light-blue" id="beginBtn">Click to Begin!</a>
+      <a class="waves-effect waves-light btn-large light-blue" id="beginBtn">
+        Click here to begin!
+      </a>
     </div>
+    <!-- card element -->
     <div class="row" id="cardHolder">
       <div class="col s12">
         <div class="card">
@@ -35,24 +38,21 @@
           </div>
           <div class="card-content center-align">
             <div class="row">
-              <div class="teal-text col s6" id="correct">CORRECT: 0</div>
-              <div class="red-text col s6" id="wrong">WRONG: 0</div>
+              <!-- correct counter -->
+              <div class="teal-text col s4" id="correct">CORRECT: 0</div>
+              <!-- timer -->
+              <div class="col s4" id="timer"></div>
+              <!-- wrong counter -->
+              <div class="red-text col s4" id="wrong">WRONG: 0</div>
             </div>
+            <!-- modal buttons -->
             <div class="row" id="message">
-              <a class="waves-effect waves-light btn-small modal-trigger col s6 light-blue" href="#modal1" id="choice1">
-
-              </a>
-              <a class="waves-effect waves-light btn-small modal-trigger col s6 light-blue" href="#modal1" id="choice2">
-
-              </a>
+              <a class="waves-effect waves-light btn-small modal-trigger col s6 light-blue" href="#modal1" id="choice1"></a>
+              <a class="waves-effect waves-light btn-small modal-trigger col s6 light-blue" href="#modal1" id="choice2"></a>
             </div>
             <div class="row">
-              <a class="waves-effect waves-light btn-small modal-trigger col s6 light-blue" href="#modal1" id="choice3">
-
-              </a>
-              <a class="waves-effect waves-light btn-small modal-trigger col s6 light-blue" href="#modal1" id="choice4">
-
-              </a>
+              <a class="waves-effect waves-light btn-small modal-trigger col s6 light-blue" href="#modal1" id="choice3"></a>
+              <a class="waves-effect waves-light btn-small modal-trigger col s6 light-blue" href="#modal1" id="choice4"></a>
             </div>
           </div>
         </div>
