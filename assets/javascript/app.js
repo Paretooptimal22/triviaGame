@@ -72,15 +72,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // display modal when player clicks choice and answer confirmed
 const renderAnswer = () => {
-  let ansCount = -1
   document.addEventListener(`click`, event => {
     if (event.target.className === `waves-effect waves-light btn-small modal-trigger col s6`) {
-      ansCount++
       if (answers.includes(event.target.textContent)) {
         document.getElementById(`confirm`).innerHTML = `CORRECT!`
+        document.getElementById(`ans`).innerHTML = `The Landmark is ${answers[0]}`
+        answers.shift()
+        console.log(answers)
       } else {
         document.getElementById(`confirm`).innerHTML = `WRONG!`
-        document.getElementById(`ans`).innerHTML = `The Landmark is ${answers[ansCount]}`
+        document.getElementById(`ans`).innerHTML = `The Landmark is ${answers[0]}`
+        answers.shift()
+        console.log(answers)
       }
     }
     
