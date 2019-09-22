@@ -35,46 +35,53 @@ const landArr = [
 // correct
 const answers = [`Basilica La Sagrada Familia`, `The Louvre`, `Tokyo Tower`, `Flatiron Building`, `Sydney Opera House`, `Marina Bay Sands`, `Tower Bridge`, `Pantheon`, `Brandenburg Gate`, `Hagia Sophia`]
 
-console.log(answers)
-
 // styling of begin button
 document.getElementById(`beginBtn`).style.display = `block`
 
-// counter for template literals
-let count = 1
-
-let ansCount = 0
+let count = 0
+let imageCount = 1
 
 // create card element to play game
-let cardElem = document.createElement(`div`)
-cardElem.innerHTML = `
-        <div class="col s12">
-          <div class="card">
-            <div class="card-image">
-              <img src="./assets/images/image${count}.jpg" alt="landmark">
-              <span class="card-title">Name this landmark</span>
-            </div>
-            <div class="card-content center-align">
-              <div class="row">
-                <a class="waves-effect waves-light btn-small modal-trigger col s6" href="#modal1">${landArr[0].landmark[0]}</a>
-                <a class="waves-effect waves-light btn-small modal-trigger col s6" href="#modal1">${landArr[0].landmark[1]}</a>
-              </div>
-              <div class="row">
-                <a class="waves-effect waves-light btn-small modal-trigger col s6" href="#modal1">${landArr[0].landmark[2]}</a>
-                <a class="waves-effect waves-light btn-small modal-trigger col s6" href="#modal1">${landArr[0].landmark[3]}</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      `
+const renderCard = () => {
+  document.getElementById(`pic`).innerHTML = `<img id="image" src="./assets/images/image1.jpg" alt="landmark">`
+  document.getElementById(`choice1`).textContent = `${landArr[count].landmark[0]}`
+  document.getElementById(`choice2`).textContent = `${landArr[count].landmark[1]}`
+  document.getElementById(`choice3`).textContent = `${landArr[count].landmark[2]}`
+  document.getElementById(`choice4`).textContent = `${landArr[count].landmark[3]}`
+}
+  // let cardElem = document.createElement(`div`)
+  // cardElem.innerHTML = `
+  //       <div class="col s12" id"cardDiv">
+  //         <div class="card">
+  //           <div class="card-image">
+  //             <img src="./assets/images/image${imageCount}.jpg" alt="landmark" id="images">
+  //             <span class="card-title">Name this landmark</span>
+  //           </div>
+  //           <div class="card-content center-align">
+  //             <div class="row">
+  //               <a class="waves-effect waves-light btn-small modal-trigger col s6" href="#modal1">${landArr[count].landmark[0]}</a>
+  //               <a class="waves-effect waves-light btn-small modal-trigger col s6" href="#modal1">${landArr[count].landmark[1]}</a>
+  //             </div>
+  //             <div class="row">
+  //               <a class="waves-effect waves-light btn-small modal-trigger col s6" href="#modal1">${landArr[count].landmark[2]}</a>
+  //               <a class="waves-effect waves-light btn-small modal-trigger col s6" href="#modal1">${landArr[count].landmark[3]}</a>
+  //             </div>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     `
+  // document.getElementById(`cardHolder`).append(cardElem)
+
+  
+// }
+
 
 // on click of button: display card element and hide button
 const beginGame = () => {
   document.addEventListener(`click`, event => {
-    count++
     if (event.target.id === `beginBtn`) {
-      document.getElementById(`cardHolder`).append(cardElem)
       document.getElementById(`beginBtn`).style.display = `none`
+      renderCard()
     }
   })
 }
@@ -89,29 +96,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // display modal on click with answer
 const renderAnswer = () => {
-  let count = -1
+  let ansCount = -1
   document.addEventListener(`click`, event => {
     if (event.target.className === `waves-effect waves-light btn-small modal-trigger col s6`) {
-      count++
-      console.log(event.target)
+      ansCount++
       if (answers.includes(event.target.textContent)) {
         document.getElementById(`confirm`).innerHTML = `CORRECT!`
       } else {
-        console.log('in wrong')
         document.getElementById(`confirm`).innerHTML = `WRONG!`
-        document.getElementById(`ans`).innerHTML = `The Landmark is ${answers[count]}`
+        document.getElementById(`ans`).innerHTML = `The Landmark is ${answers[ansCount]}`
       }
     }
-    if (event.target.className === `modal-close waves-effect waves-green btn-flat`) {
-      
-    }
+    
   })
 }
 
 renderAnswer()
 
-document.addEventListener('click', event => {
-  if (event.target.className === `modal-close waves-effect waves-green btn-flat`) {
-    renderAnswer()
-  }
-})

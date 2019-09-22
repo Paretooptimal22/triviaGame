@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="count">Count</h1>
+  <button id="btn">Click Me</button>
+
+  <script>
+
+  const people = [
+    {
+      "id": 1,
+      "first_name": "Lamont",
+      "last_name": "Magovern",
+      "email": "lmagovern0@ihg.com",
+      "gender": "Male",
+      "ip_address": "83.117.132.131"
+    },
+
+    {
+      "id": 2,
+      "first_name": "Aylmer",
+      "last_name": "Wilmore",
+      "email": "awilmore1@smh.com.au",
+      "gender": "Male",
+      "ip_address": "226.80.162.24"
+    },
+
+    {
+      "id": 3,
+      "first_name": "Moe",
+      "last_name": "Daggett",
+      "email": "mdaggett2@examiner.com",
+      "gender": "Male",
+      "ip_address": "161.71.245.40"
+    },
+
+    {
+      "id": 4,
+      "first_name": "Joelynn",
+      "last_name": "Ower",
+      "email": "jower3@baidu.com",
+      "gender": "Female",
+      "ip_address": "214.26.174.166"
+    },
+
+    {
+      "id": 5,
+      "first_name": "Tait",
+      "last_name": "Arsey",
+      "email": "tarsey4@php.net",
+      "gender": "Male",
+      "ip_address": "133.104.232.87"
+    },
+
+    {
+      "id": 6,
+      "first_name": "Correy",
+      "last_name": "Parrott",
+      "email": "cparrott5@skyrock.com",
+      "gender": "Female",
+      "ip_address": "111.36.21.32"
+    },
+
+    {
+      "id": 7,
+      "first_name": "Nevin",
+      "last_name": "Fleischer",
+      "email": "nfleischer6@comcast.net",
+      "gender": "Male",
+      "ip_address": "161.148.67.35"
+    },
+
+    {
+      "id": 8,
+      "first_name": "Esteban",
+      "last_name": "Cavill",
+      "email": "ecavill7@sciencedirect.com",
+      "gender": "Male",
+      "ip_address": "46.62.148.117"
+    },
+
+    {
+      "id": 9,
+      "first_name": "Edvard",
+      "last_name": "Harbinson",
+      "email": "eharbinson8@independent.co.uk",
+      "gender": "Male",
+      "ip_address": "142.204.213.119"
+    },
+
+    {
+      "id": 10,
+      "first_name": "Rebekah",
+      "last_name": "McCurt",
+      "email": "rmccurt9@apache.org",
+      "gender": "Female",
+      "ip_address": "55.37.48.131"
+    }
+  ]
+
+people.forEach(person => {
+  console.log(`
+    id: ${person.id}
+  `
+  )
+})
+
+    let count = 0
+    document.addEventListener(`click`, event => {
+      if (event.target.id === `btn`) {
+        count++
+        document.getElementById(`count`).innerHTML = `Count ${count}`
+        localStorage.setItem(`number`, count)
+      }
+    })
+    localStorage.getItem(`number`)
+  </script>
+</body>
+</html>

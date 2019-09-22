@@ -27,20 +27,32 @@
       <a class="waves-effect waves-light btn-large" id="beginBtn">Click to Begin!</a>
     </div>
     <div class="row" id="cardHolder">
-      <!-- <div class="col s12">
+      <div class="col s12">
         <div class="card">
-          <div class="card-image">
-            <img src="./assets/images/image1.jpg" alt="landmark">
-            <span class="card-title">Name this landmark</span>
+          <div class="card-image" id="pic">
+            <!-- <img id="image" src="./assets/images/image1.jpg" alt="landmark">
+            <span class="card-title">Name this landmark</span>  -->
           </div>
           <div class="card-content center-align">
-            <a class="waves-effect waves-light btn-small"></a>
-            <a class="waves-effect waves-light btn-small"></a>
-            <a class="waves-effect waves-light btn-small"></a>
-            <a class="waves-effect waves-light btn-small"></a>
+            <div class="row">
+              <a class="waves-effect waves-light btn-small modal-trigger col s6" href="#modal1" id="choice1">
+
+              </a>
+              <a class="waves-effect waves-light btn-small modal-trigger col s6" href="#modal1" id="choice2">
+
+              </a>
+            </div>
+            <div class="row">
+              <a class="waves-effect waves-light btn-small modal-trigger col s6" href="#modal1" id="choice3">
+
+              </a>
+              <a class="waves-effect waves-light btn-small modal-trigger col s6" href="#modal1" id="choice4">
+
+              </a>
+            </div>
           </div>
         </div>
-      </div> -->
+      </div>
     </div>
   </div>
 
@@ -54,7 +66,7 @@
       <p id="ans"></p>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Continue</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn" id="modalBtn">Continue</a>
     </div>
   </div>
 
