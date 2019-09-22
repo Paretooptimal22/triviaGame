@@ -82,14 +82,12 @@ const renderAnswer = () => {
         document.getElementById(`confirm`).innerHTML = `CORRECT!`
         document.getElementById(`ans`).innerHTML = `The Landmark is ${answers[0]}`
         answers.shift()
-        console.log(answers.length)
       } else {
         wrong++
         document.getElementById(`wrong`).textContent = `WRONG: ${wrong}`
         document.getElementById(`confirm`).innerHTML = `WRONG!`
         document.getElementById(`ans`).innerHTML = `The Landmark is ${answers[0]}`
         answers.shift()
-        console.log(answers.length)
       }
     }
     
