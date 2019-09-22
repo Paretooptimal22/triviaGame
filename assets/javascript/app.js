@@ -72,13 +72,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // display modal when player clicks choice and answer confirmed
 const renderAnswer = () => {
+  let correct = 0
+  let wrong = 0
   document.addEventListener(`click`, event => {
     if (event.target.className === `waves-effect waves-light btn-small modal-trigger col s6 light-blue`) {
       if (answers.includes(event.target.textContent)) {
+        correct++
+        document.getElementById(`correct`). textContent = `CORRECT: ${correct}`
         document.getElementById(`confirm`).innerHTML = `CORRECT!`
         document.getElementById(`ans`).innerHTML = `The Landmark is ${answers[0]}`
         answers.shift()
       } else {
+        wrong++
+        document.getElementById(`wrong`).textContent = `WRONG: ${wrong}`
         document.getElementById(`confirm`).innerHTML = `WRONG!`
         document.getElementById(`ans`).innerHTML = `The Landmark is ${answers[0]}`
         answers.shift()
