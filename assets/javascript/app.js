@@ -78,12 +78,10 @@ const renderAnswer = () => {
         document.getElementById(`confirm`).innerHTML = `CORRECT!`
         document.getElementById(`ans`).innerHTML = `The Landmark is ${answers[0]}`
         answers.shift()
-        console.log(answers)
       } else {
         document.getElementById(`confirm`).innerHTML = `WRONG!`
         document.getElementById(`ans`).innerHTML = `The Landmark is ${answers[0]}`
         answers.shift()
-        console.log(answers)
       }
     }
     
